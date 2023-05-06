@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -14,6 +16,10 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+input {
+  color: #FFFFFF;
 }
 
 .image {
@@ -75,6 +81,66 @@ p {
 
   padding: 10px 40px;
   cursor: pointer;
+}
+
+.signup-form input:invalid {
+    border: 1px solid #b92326;
+    background-color: rgba(185, 35, 38, 0.25);
+}
+
+.signup-form input:invalid {
+    background-color: transparent;
+    border: 1px solid #b92326;
+}
+
+.signup-form input:invalid + label {
+    color: #b92326;
+}
+
+.signup-form input:valid + label {
+    border: 1px solid #8BC34A;
+    background-color: rgba(139, 195, 74, 0.25);
+}
+
+.signup-form input:focus:invalid + label:after {
+    content: " (" attr(data-help) ")";
+}
+.signup-form input:invalid + label:after {
+    content: " (" attr(data-help) ")";
+}
+.signup-form input:valid {
+    border: 1px solid #8BC34A;
+    background-color: rgba(139, 195, 74, 0.25);
+}
+.signup-form input:focus:valid {
+    border: 1px solid #8BC34A;
+    background-color: transparent;
+}
+.signup-form input:valid + label {
+    color: #8BC34A;
+}
+
+.signup-form input:placeholder-shown {
+    background-color: transparent;
+    border: 1px solid #d8d8d8;
+}
+.signup-form input::placeholder {
+    color: #3c3c3c;
+}
+
+.error-message {
+  display: none;
+  font-weight: bold;
+  color: red;
+}
+
+input:not(:focus):not(:placeholder-shown):invalid ~ .error-message {
+  display: block; 
+}
+
+.red {
+  font-weight: bold;
+  color: red;
 }
 
 @media only screen and (min-width: 700px) {
